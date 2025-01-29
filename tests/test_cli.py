@@ -20,7 +20,7 @@ def test_path_does_not_exist():  # Incorrect path raises error
 
 def test_incorrect_input_format():  # Test incorrect input format
     result = runner.invoke(app, ['/files/log/short_file.xml', 'test.csv'])
-    file_path = os.getcwd() + '/files/log/short_fi\le.xml'
+    file_path = os.getcwd() + '/files/log/short_file.xml'
     error_msg = f'[ERROR]{file_path}: Input file does not have correct \nformat. Supported formats are: json, txt, csv.'
     assert error_msg in result.stdout
 
@@ -35,7 +35,6 @@ def test_no_output_format():  # Test output file with no format
 def test_incorrect_output_format():  # Test output file with wrong format
     result = runner.invoke(app, ['/files/log/short_file.log', 'test.xml'])
     file_path = os.getcwd() + '/files_results/test.xml'
-    error_msg = f'[ERROR]{file_path}: Output file does not have correct ' \
-                f'\nformat. Supported formats are: json, \ntxt, csv.'
+    error_msg = f'[ERROR]{file_path}: Output file does not have correct \nformat. Supported formats are: json, txt, csv.'
 
     assert error_msg in result.stdout
