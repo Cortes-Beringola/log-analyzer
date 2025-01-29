@@ -135,7 +135,7 @@ This would be the simple solution with low scalability. There are two possible w
        ```bash
         docker run --name cli_container -t cli_executable /files/csv/ results.csv 
        ```
-  - Run container and access container terminal: Less comfortable for executing but better for accessing files. 
+  - Run container and access container terminal: Less comfortable for executing but better for accessing files or running tests. 
     1. Go to app root working directory.
     2. Build docker image:
        ```bash
@@ -150,7 +150,8 @@ This would be the simple solution with low scalability. There are two possible w
         python cli.py /files/csv/ result.csv 
        ```
     5. Check files by accessing proper directories
-    6. Exit terminal by typing `exit`  
+    6. Run tests
+    7. Exit terminal by typing `exit`  
     
 - #### Docker Service
 This would be the scalable solution, desired in case this application got popular and started getting a lot of usage.
